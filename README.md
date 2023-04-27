@@ -4,6 +4,7 @@
 - [Paroolide talletamine teises Pythoni failis](https://stackoverflow.com/questions/25501403/storing-the-secrets-passwords-in-a-separate-file)
 - [Pythoni lisamoodulite paigaldamine](https://packaging.python.org/en/latest/tutorials/installing-packages/)
 - [Vaata samalaadset lahendust Powershellis](https://blog.darrenjrobinson.com/using-wordpress-apis-with-powershell/)
+- [.gitignore failist](https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/)
 
 ## Kasutamine
 - Lisa Wordpressi uus kasutaja (vähemalt editor õigustes), kasutaja all uus Application (kirjuta üles rakenduse nimi ja parool)
