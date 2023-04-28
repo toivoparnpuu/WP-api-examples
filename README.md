@@ -1,10 +1,16 @@
 # Wordpress postituste skriptimine
 ## allikad
-- [Wordpress API](https://developer.wordpress.org/rest-api/reference/)'
+[Tutvustus](https://tptliveee-my.sharepoint.com/:v:/g/personal/toivo_parnpuu_tptlive_ee/EaVwMv2IkwhBrDITUHuMPdcB1LpqYi-owRVO7HcdS_Vg-Q?e=bUdIrW)
+- [Wordpress API](https://developer.wordpress.org/rest-api/reference/)
 - [Paroolide talletamine teises Pythoni failis](https://stackoverflow.com/questions/25501403/storing-the-secrets-passwords-in-a-separate-file)
 - [Pythoni lisamoodulite paigaldamine](https://packaging.python.org/en/latest/tutorials/installing-packages/)
 - [Vaata samalaadset lahendust Powershellis](https://blog.darrenjrobinson.com/using-wordpress-apis-with-powershell/)
 - [.gitignore failist](https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/)
+
+Loe juurde:
+- [Mis on API(Wikipedia)](https://et.wikipedia.org/wiki/Rakendusliides)
+- [Lühike API tutvustus](https://www.freecodecamp.org/news/how-apis-work)
+- [Thunder Client for VScode tutvustus](https://www.freecodecamp.org/news/thunder-client-for-vscode/)
 
 ## Kasutamine Python
 - Lisa Wordpressi uus kasutaja (vähemalt editor õigustes), kasutaja all uus Application (kirjuta üles rakenduse nimi ja parool)
