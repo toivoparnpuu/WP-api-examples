@@ -1,79 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Uue postituse loomine WordPressi</title>
-</head>
-<body>
+  </head>
+  <body>
     <form id="postForm" enctype="multipart/form-data">
-        <label for="csvFile">Vali CSV-fail:</label>
-        <input type="file" name="csvFile" id="csvFile" accept=".csv" required>
-        <br>
-        <label for="url">WordPressi REST API URL:</label>
-        <input type="url" name="url" id="url" value="https://tparnpuu.webhosting.tptlive.ee/skriptitav/wp-json/wp/v2/posts/" required>
-        <br>
-        <label for="username">Kasutajanimi:</label>
-        <input type="text" name="username" id="username" required>
-        <br>
-        <label for="password">Parool:</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <input type="submit" value="Postita">
+      <label for="csvFile">Vali CSV-fail:</label>
+      <input type="file" name="csvFile" id="csvFile" accept=".csv" required />
+      <br />
+      <label for="url">WordPressi REST API URL:</label>
+      <input
+        type="url"
+        name="url"
+        id="url"
+        value="https://tparnpuu.webhosting.tptlive.ee/skriptitav/wp-json/wp/v2/posts/"
+        length="200"
+        size="120"
+        required
+      />
+      <br />
+      <label for="username">Kasutajanimi:</label>
+      <input type="text" name="username" id="username" required />
+      <br />
+      <label for="password">Parool:</label>
+      <input type="password" name="password" id="password" required />
+      <br />
+      <input type="submit" value="Postita" />
     </form>
 
     <div id="result"></div>
 
     <script>
-        const form = document.getElementById("postForm");
+      const form = document.getElementById("postForm");
 
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-            const url = form.url.value;
-            const username = form.username.value;
-            const password = form.password.value;
-            const file = form.csvFile.files[0];
+        const url = form.url.value;
+        const username = form.username.value;
+        const password = form.password.value;
+        const file = form.csvFile.files[0];
 
-            const reader = new FileReader();
-            reader.readAsText(file, "utf-8");
-            reader.onload = () => {
-                const csv = reader.result;
-                const lines = csv.split(/\r?\n/);
+        const headers = new Headers();
+        headers.append("Content-Type", "application/json");
+        headers.append("Authorization", "Basic " + btoa(username + ":" + password));
 
-                for (let i = 0; i < lines.length; i++) {
-                    const data = lines[i].split(";");
+        const reader = new FileReader();
+        reader.readAsText(file, "utf-8");
+        reader.onload = function () {
+          const csv = reader.result;
+          const lines = csv.split(/\r?\n/);
 
-                    const postData = {
-                        title: data[0],
-                        content: data[1],
-                        status: "publish"
-                    };
+          for (let i = 0; i < lines.length; i++) {
+            const data = lines[i].split(";");
 
-                    fetch(url, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(postData),
-                        credentials: "include",
-                        auth: `${username}:${password}`
-                    })
-                    .then(response => {
-                        const status = response.status;
-                        response.json().then(data => {
-                            const resultDiv = document.getElementById("result");
-                            const message = `Tulemus: ${status} - ${JSON.stringify(data)}`;
-                            resultDiv.innerHTML += `<p>${message}</p>`;
-                        });
-                    })
-                    .catch(error => {
-                        console.error(error);
-                        const resultDiv = document.getElementById("result");
-                        resultDiv.innerHTML += `<p>Viga: ${error.message}</p>`;
-                    });
-                }
+            const postData = {
+              title: data[0],
+              content: data[1],
+              status: "publish",
             };
-        });
+            console.log(postData)
+
+            fetch(url, {
+              method: "POST",
+              headers: headers,
+              body: JSON.stringify(postData),
+              credentials: "include",
+              auth: `${username}:${password}`,
+            })
+              .then(function (response) {
+                const status = response.status;
+                response.json().then(function (data) {
+                  const resultDiv = document.getElementById("result");
+                  const message =
+                    "Tulemus: " + status + " - " + JSON.stringify(data);
+                  resultDiv.innerHTML += "<p>" + message + "</p>";
+                });
+              })
+              .catch(function (error) {
+                console.error(error);
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML += "<p>Viga: " + error.message + "</p>";
+              });
+          }
+        };
+      });
     </script>
-</body>
+  </body>
 </html>
