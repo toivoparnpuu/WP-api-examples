@@ -1,5 +1,6 @@
 # Wordpress postituste skriptimine
 ## allikad
+[Tutvustus](https://tptliveee-my.sharepoint.com/:v:/g/personal/toivo_parnpuu_tptlive_ee/EaVwMv2IkwhBrDITUHuMPdcB1LpqYi-owRVO7HcdS_Vg-Q?e=bUdIrW)
 - [Wordpress API](https://developer.wordpress.org/rest-api/reference/)
 - [Paroolide talletamine teises Pythoni failis](https://stackoverflow.com/questions/25501403/storing-the-secrets-passwords-in-a-separate-file)
 - [Pythoni lisamoodulite paigaldamine](https://packaging.python.org/en/latest/tutorials/installing-packages/)
