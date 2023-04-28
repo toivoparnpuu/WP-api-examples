@@ -17,12 +17,12 @@ def newPost(url, kasutajanimi, parool, pealkiri, sisu):
 
     response = requests.post(url, auth=(kasutajanimi, parool), headers=headers, data=json_data)
 
-    print("tulemus:", response.status_code, response.json())
+    print("tulemus:", response.status_code)
     
 
 if __name__ == "__main__":
 
-    url = "https://tparnpuu.webhosting.tptlive.ee/skriptitav/wp-json/wp/v2/posts/"
+    url = "https://tparnpuu.webhosting.tptlive.ee/apidemo/wp-json/wp/v2/posts/"
 
 
     csv = open(
