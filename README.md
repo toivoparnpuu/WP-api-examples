@@ -6,6 +6,11 @@
 - [Vaata samalaadset lahendust Powershellis](https://blog.darrenjrobinson.com/using-wordpress-apis-with-powershell/)
 - [.gitignore failist](https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/)
 
+Loe juurde:
+- [Mis on API(Wikipedia)](https://et.wikipedia.org/wiki/Rakendusliides)
+- [Lühike API tutvustus](https://www.freecodecamp.org/news/how-apis-work)
+- [Thunder Client for VScode tutvustus](https://www.freecodecamp.org/news/thunder-client-for-vscode/)
+
 ## Kasutamine Python
 - Lisa Wordpressi uus kasutaja (vähemalt editor õigustes), kasutaja all uus Application (kirjuta üles rakenduse nimi ja parool)
 - rakenduse nimi ja parool lähevad mypasswordsEXAMPLE.py faili. Muuda mypasswordsEXAMPLE.py nimi mypasswrds.py. 
