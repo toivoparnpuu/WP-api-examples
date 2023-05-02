@@ -12,6 +12,8 @@ Loe juurde:
 - [Lühike API tutvustus](https://www.freecodecamp.org/news/how-apis-work)
 - [Thunder Client for VScode tutvustus](https://www.freecodecamp.org/news/thunder-client-for-vscode/)
 
+## Wordpress API kirjeldus
+URL: https://blog.minudomeen.ee/wp-json/wp/v2/posts/
 ## Kasutamine Python
 - Lisa Wordpressi uus kasutaja (vähemalt editor õigustes), kasutaja all uus Application (kirjuta üles rakenduse nimi ja parool)
 - rakenduse nimi ja parool lähevad mypasswordsEXAMPLE.py faili. Muuda mypasswordsEXAMPLE.py nimi mypasswrds.py. 
